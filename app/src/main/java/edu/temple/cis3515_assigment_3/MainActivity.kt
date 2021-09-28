@@ -2,6 +2,8 @@ package edu.temple.cis3515_assigment_3
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -9,6 +11,17 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val mangaData: Array<ImageObject> = getData()
+        val recycle = findViewById<RecyclerView>(R.id.rcvView) as RecyclerView
+        var adapter =ImageAdapter(mangaData)
+        recycle.adapter = adapter
+        adapter.setOnItemClickListener(object : ImageAdapter.onItemClickListener{
+            override fun onItemClick(position: Int) {
+                Toast.makeText(this@MainActivity, "$position",Toast.LENGTH_LONG).show()
+
+            }
+        })
+        recycle.layoutManager = GridLayoutManager(this,4)
 
 
     }

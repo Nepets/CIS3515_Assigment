@@ -9,17 +9,22 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class ImageAdapter(private val arrayImageObject: Array<ImageObject>): RecyclerView.Adapter<ImageAdapter.ViewHolder>() {
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val imageView = itemView.findViewById<ImageView>(R.id.rcvImageView)
-        val textView = itemView.findViewById<TextView>(R.id.rcvDescriptionView)
+    private lateinit var myListner: onItemClickListener
 
+    interface  onItemClickListener{
+        fun onItemClick(position: Int)
     }
+
+    fun setOnItemClickListener(listener: onItemClickListener){
+        myListner = listener
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageAdapter.ViewHolder {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
         val mangaView = inflater.inflate(R.layout.rcv_itemcontainer,parent,false)
 
-        return ViewHolder(mangaView)
+        return ViewHolder(mangaView,myListner)
     }
 
     override fun onBindViewHolder(holder: ImageAdapter.ViewHolder, position: Int) {
@@ -34,6 +39,17 @@ class ImageAdapter(private val arrayImageObject: Array<ImageObject>): RecyclerVi
 
     override fun getItemCount(): Int {
         return arrayImageObject.size
+    }
+    inner class ViewHolder(itemView: View, listener: onItemClickListener): RecyclerView.ViewHolder(itemView){
+        val imageView = itemView.findViewById<ImageView>(R.id.rcvImageView)
+        val textView = itemView.findViewById<TextView>(R.id.rcvDescriptionView)
+
+        init{
+            itemView.setOnClickListener(){
+                listener.onItemClick(adapterPosition)
+            }
+        }
+
     }
 }
 
