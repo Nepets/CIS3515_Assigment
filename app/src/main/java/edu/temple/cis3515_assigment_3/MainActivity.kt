@@ -37,7 +37,9 @@ class MainActivity : AppCompatActivity() {
         return arrayOf(ImageObject("Black Clover", R.drawable.blackclover), ImageObject("Chainsaw Man",R.drawable.chainsawman),
             ImageObject("Demon Slayer", R.drawable.demonslayer), ImageObject("Dr. Stone",R.drawable.drstone),
             ImageObject("Dragon Ball Z",R.drawable.dragonball), ImageObject("Haikyuu",R.drawable.haikyuu),
-            ImageObject("One Piece",R.drawable.juju), ImageObject("One Punch",R.drawable.onepunch), ImageObject("Seraph no End", R.drawable.seraphend))
+            ImageObject("One Piece",R.drawable.juju), ImageObject("One Punch",R.drawable.onepunch),
+            ImageObject("Seraph no End", R.drawable.seraphend), ImageObject("Magi",R.drawable.magi),
+            ImageObject("Naruto",R.drawable.naruto),ImageObject("Boruto",R.drawable.boruto))
 
     }
 
