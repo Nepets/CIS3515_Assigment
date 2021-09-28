@@ -3,6 +3,8 @@ package edu.temple.cis3515_assigment_3
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,12 +15,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val mangaData: Array<ImageObject> = getData()
         val recycle = findViewById<RecyclerView>(R.id.rcvView) as RecyclerView
+        var image = findViewById<ImageView>(R.id.mainImageView)
+        var text = findViewById<TextView>(R.id.maintextView)
         var adapter =ImageAdapter(mangaData)
         recycle.adapter = adapter
         adapter.setOnItemClickListener(object : ImageAdapter.onItemClickListener{
             override fun onItemClick(position: Int) {
                 Toast.makeText(this@MainActivity, "$position",Toast.LENGTH_LONG).show()
-
+                image.setImageResource(mangaData[position].resourceId)
+                text.text = mangaData[position].description
             }
         })
         recycle.layoutManager = GridLayoutManager(this,4)
