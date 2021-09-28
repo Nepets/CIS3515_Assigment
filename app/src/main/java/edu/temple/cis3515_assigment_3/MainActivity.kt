@@ -3,10 +3,12 @@ package edu.temple.cis3515_assigment_3
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.GridView
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
@@ -21,13 +23,13 @@ class MainActivity : AppCompatActivity() {
         recycle.adapter = adapter
         adapter.setOnItemClickListener(object : ImageAdapter.onItemClickListener{
             override fun onItemClick(position: Int) {
-                Toast.makeText(this@MainActivity, "$position",Toast.LENGTH_LONG).show()
+                //Toast.makeText(this@MainActivity, "$position",Toast.LENGTH_LONG).show()
                 image.setImageResource(mangaData[position].resourceId)
                 text.text = mangaData[position].description
+                text.textSize = 20F
             }
         })
-        recycle.layoutManager = GridLayoutManager(this,4)
-
+        recycle.layoutManager = GridLayoutManager(this,3)
 
     }
 

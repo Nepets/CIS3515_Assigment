@@ -9,8 +9,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvView"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginTop="1dp"
+        android:layout_height="250dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,20 +18,23 @@
         android:id="@+id/mainImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.146"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rcvView"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/blackclover" />
 
     <TextView
         android:id="@+id/maintextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/mainImageView"
-        app:layout_constraintStart_toStartOf="@+id/mainImageView"
-        app:layout_constraintTop_toBottomOf="@+id/mainImageView" />
+        android:layout_marginStart="52dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/mainImageView"
+        app:layout_constraintStart_toEndOf="@+id/mainImageView"
+        app:layout_constraintTop_toTopOf="@+id/mainImageView"
+        app:layout_constraintVertical_bias="0.513" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

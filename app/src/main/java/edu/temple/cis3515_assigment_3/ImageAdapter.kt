@@ -31,9 +31,7 @@ class ImageAdapter(private val arrayImageObject: Array<ImageObject>): RecyclerVi
         val manga: ImageObject = arrayImageObject[position]
 
         val imageViews = holder.imageView
-        val textView = holder.textView
         imageViews.setImageResource(manga.resourceId)
-        textView.text = manga.description
 
     }
 
@@ -42,7 +40,6 @@ class ImageAdapter(private val arrayImageObject: Array<ImageObject>): RecyclerVi
     }
     inner class ViewHolder(itemView: View, listener: onItemClickListener): RecyclerView.ViewHolder(itemView){
         val imageView = itemView.findViewById<ImageView>(R.id.rcvImageView)
-        val textView = itemView.findViewById<TextView>(R.id.rcvDescriptionView)
 
         init{
             itemView.setOnClickListener(){
