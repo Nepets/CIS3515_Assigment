@@ -1,36 +1,43 @@
 package edu.temple.cis3515_assigment_3
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.GridView
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class MainActivity : AppCompatActivity() {
+class SelectionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val mangaData: Array<ImageObject> = getData()
         val recycle = findViewById<RecyclerView>(R.id.rcvView) as RecyclerView
-        var image = findViewById<ImageView>(R.id.mainImageView)
-        var text = findViewById<TextView>(R.id.maintextView)
-        var adapter =ImageAdapter(mangaData)
+        val detailActivityIntent = Intent(this,DetailActivity::class.java)
+        val adapter =ImageAdapter(mangaData)
         recycle.adapter = adapter
-        adapter.setOnItemClickListener(object : ImageAdapter.onItemClickListener{
+        adapter.setOnItemClickListener(object : ImageAdapter.OnItemClickListener{
             override fun onItemClick(position: Int) {
-                //Toast.makeText(this@MainActivity, "$position",Toast.LENGTH_LONG).show()
-                image.setImageResource(mangaData[position].resourceId)
-                text.text = mangaData[position].description
-                text.textSize = 20F
+                //Toast.makeText(this@SelectionActivity, mangaData[position].description.toString(), Toast.LENGTH_LONG).show()
+                detailActivityIntent.putExtra("name",mangaData[position].description)
+                detailActivityIntent.putExtra("image",mangaData[position].resourceId)
+                startActivity(detailActivityIntent)
             }
         })
         recycle.layoutManager = GridLayoutManager(this,3)
 
+    }
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        // Overriding onRestoreInstanceState() allows you to separate your "initialization" code
+        // from your "restoration" code.
+    }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        // This method is used to persist state data before the activity is destroyed by Android,
+        // allowing it to be retrieved when the activity is recreated.
+        // Please items in the Bundle argument and they will be returned when onCreate() and
+        // onRestoreInstanceState() are called.
+        //
     }
 
     private fun getData(): Array<ImageObject> {

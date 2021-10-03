@@ -4,37 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SelectionActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvView"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="729dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/mainImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.146"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rcvView"
-        tools:srcCompat="@drawable/blackclover" />
-
-    <TextView
-        android:id="@+id/maintextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/mainImageView"
-        app:layout_constraintStart_toEndOf="@+id/mainImageView"
-        app:layout_constraintTop_toTopOf="@+id/mainImageView"
-        app:layout_constraintVertical_bias="0.513" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

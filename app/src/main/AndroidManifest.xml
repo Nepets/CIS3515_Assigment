@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CIS3515_Assigment_3">
         <activity
-            android:name=".MainActivity"
+            android:name=".DetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SelectionActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
