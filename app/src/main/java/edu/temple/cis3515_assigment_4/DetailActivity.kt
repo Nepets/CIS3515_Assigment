@@ -1,12 +1,10 @@
-package edu.temple.cis3515_assigment_3
+package edu.temple.cis3515_assigment_4
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import kotlin.properties.Delegates
 
 class DetailActivity : AppCompatActivity() {
     companion object {

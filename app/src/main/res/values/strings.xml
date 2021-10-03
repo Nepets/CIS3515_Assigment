@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CIS3515_Assigment_3</string>
+    <string name="app_name">Manga Viewer</string>
     <string name="MangaView">MangaImage</string>
     <string name="BackButton">Back</string>
 
