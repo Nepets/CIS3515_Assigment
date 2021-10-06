@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.388"
+        app:layout_constraintVertical_bias="0.66"
         app:srcCompat="@drawable/blackclover" />
 
     <TextView
@@ -28,17 +28,4 @@
         app:layout_constraintEnd_toEndOf="@+id/displayImageView"
         app:layout_constraintStart_toStartOf="@+id/displayImageView" />
 
-    <Button
-        android:id="@+id/displayButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="32dp"
-        android:text="@string/BackButton"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.814"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/displayImageView"
-        app:layout_constraintVertical_bias="0.058" />
 </androidx.constraintlayout.widget.ConstraintLayout>

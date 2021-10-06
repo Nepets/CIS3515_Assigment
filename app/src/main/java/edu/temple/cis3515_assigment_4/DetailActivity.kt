@@ -24,10 +24,6 @@ class DetailActivity : AppCompatActivity() {
         textView.textSize = 20F
         imageView.setImageResource(imageId!!)
 
-        findViewById<Button>(R.id.displayButton).setOnClickListener{
-            finish()
-        }
-
 
     }
 }
