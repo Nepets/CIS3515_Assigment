@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Visionneuse de mangas</string>
+    <string name="MangaView">Image Manga</string>
+    <string name="selection_name">Sélection</string>
+    <string name="detail_name">Détail</string>
+    <string name="instructions">Cliquez sur une image ci-dessous pour voir</string>
+    <string-array name="manga_names">
+        <item>Trèfle noir</item>
+        <item>Homme à la tronçonneuse</item>
+        <item>Tueur de démons</item>
+        <item>Dr Pierre</item>
+        <item>Dragon Balle Z</item>>
+        <item>Haikyuu</item>
+        <item>Une pièce</item>
+        <item>Un coup de poing</item>
+        <item>Séraphin sans fin</item>
+        <item>Mages</item>
+        <item>Naruto</item>
+        <item>Boruto</item>
+    </string-array>
+</resources>

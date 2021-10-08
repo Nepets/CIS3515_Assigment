@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class SelectionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        this.title = resources.getString(R.string.selection_name)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val mangaData: Array<ImageObject> = getData()
@@ -39,14 +40,15 @@ class SelectionActivity : AppCompatActivity() {
         // onRestoreInstanceState() are called.
         //
     }
-
     private fun getData(): Array<ImageObject> {
-        return arrayOf(ImageObject("Black Clover", R.drawable.blackclover), ImageObject("Chainsaw Man",R.drawable.chainsawman),
-            ImageObject("Demon Slayer", R.drawable.demonslayer), ImageObject("Dr. Stone",R.drawable.drstone),
-            ImageObject("Dragon Ball Z",R.drawable.dragonball), ImageObject("Haikyuu",R.drawable.haikyuu),
-            ImageObject("One Piece",R.drawable.juju), ImageObject("One Punch",R.drawable.onepunch),
-            ImageObject("Seraph no End", R.drawable.seraphend), ImageObject("Magi",R.drawable.magi),
-            ImageObject("Naruto",R.drawable.naruto),ImageObject("Boruto",R.drawable.boruto))
+        val mangaNames = resources.getStringArray(R.array.manga_names)
+
+        return arrayOf(ImageObject(mangaNames[0], R.drawable.blackclover), ImageObject(mangaNames[1].toString(),R.drawable.chainsawman),
+            ImageObject(mangaNames[2], R.drawable.demonslayer), ImageObject(mangaNames[3],R.drawable.drstone),
+            ImageObject(mangaNames[4],R.drawable.dragonball), ImageObject(mangaNames[5],R.drawable.haikyuu),
+            ImageObject(mangaNames[6],R.drawable.juju), ImageObject(mangaNames[7],R.drawable.onepunch),
+            ImageObject(mangaNames[8], R.drawable.seraphend), ImageObject(mangaNames[9],R.drawable.magi),
+            ImageObject(mangaNames[10],R.drawable.naruto),ImageObject(mangaNames[11],R.drawable.boruto))
 
     }
 
