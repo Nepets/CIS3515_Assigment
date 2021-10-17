@@ -1,6 +1,1 @@
-# CIS3515_Assigment_3
-I accidentally overwrote this assignment with assignment 4 while trying to clone it
-This is assigment 3 for Mobile App Development. To create a custom adapter using recycler view to layout interactable images. When you click the image it will display it on the 
-bottom half of the screen with a text view of the descritpion of the image. 
-
-![assign3](https://user-images.githubusercontent.com/55922609/135149396-24a3a4e2-3897-4e86-b753-e19801631067.PNG)
+Updated to Assigment 6 Specifications. To see older assignments look at the branch.
