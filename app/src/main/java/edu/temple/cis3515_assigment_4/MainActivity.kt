@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var selectionFrag: SelectionFragment
-    private lateinit var displayFrag: DisplayFragment
+    //private lateinit var selectionFrag: SelectionFragment
+    //private lateinit var displayFrag: DisplayFragment
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -17,11 +17,12 @@ class MainActivity : AppCompatActivity() {
             R.drawable.demonslayer,R.drawable.drstone,R.drawable.dragonball,R.drawable.haikyuu,
             R.drawable.juju,R.drawable.onepunch, R.drawable.seraphend,R.drawable.magi,R.drawable.naruto,
             R.drawable.boruto)
-        selectionFrag = SelectionFragment.newInstance(mangaNames,mangaImage)
-        displayFrag = DisplayFragment()
+
+        //selectionFrag = SelectionFragment.newInstance(mangaNames,mangaImage)
+        //displayFrag =
         supportFragmentManager.beginTransaction()
-            .add(R.id.frgContainer1, selectionFrag)
-            .add(R.id.frgContainer2,displayFrag)
+            .add(R.id.frgContainer1, SelectionFragment.newInstance(mangaNames,mangaImage))
+            .add(R.id.frgContainer2,DisplayFragment())
             .commit()
 
     }

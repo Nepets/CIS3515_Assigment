@@ -15,8 +15,8 @@ import androidx.lifecycle.ViewModelProvider
 
 class DisplayFragment : Fragment() {
 
-    private lateinit var layout: View
-    private lateinit var model: ImageModel
+    //private lateinit var layout: View
+    //private lateinit var model: ImageModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,23 +25,23 @@ class DisplayFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        layout =inflater.inflate(R.layout.fragment_display, container, false)
-        model= ViewModelProvider(requireActivity()).get(ImageModel::class.java)
-        val textView = layout.findViewById<TextView>(R.id.DisaplyFragTV)
-        val imageView = layout.findViewById<ImageView>(R.id.DisplayFragImage)
-        model.mangaDescription.observe(viewLifecycleOwner, object : Observer<Any> {
-            override fun onChanged(o: Any?) {
-                textView.text = o!!.toString()
-            }
-        })
-        model.mangaImage.observe(viewLifecycleOwner, object : Observer<Any> {
-            override fun onChanged(o: Any?) {
-                imageView.setImageResource(o!! as Int)
-            }
-        })
-        //Toast.makeText(layout.context, model.mangaDescription.value.toString(), Toast.LENGTH_LONG).show()
+        return inflater.inflate(R.layout.fragment_display, container, false)
 
-        return layout
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val model= ViewModelProvider(requireActivity()).get(ImageModel::class.java)
+
+        val textView = view.findViewById<TextView>(R.id.DisaplyFragTV)
+        val imageView = view.findViewById<ImageView>(R.id.DisplayFragImage)
+        textView.textSize = 20f;
+
+        model.mangaDescription.observe(viewLifecycleOwner,
+            { o -> textView.text = o!!.toString() })
+
+        model.mangaImage.observe(viewLifecycleOwner,
+            { o -> imageView.setImageResource(o!! as Int) })
     }
 
 }
